@@ -69,16 +69,35 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
+DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS ;
+
 -- Create new tables, according to your domain model
 -- TODO!
+
+CREATE TABLE xyz (
+    id INTEGER PRIMARY KEY ,
+
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+INSERT INTO <TABLE NAME> (
+    <COLUMN NAME>,
+    <COLUMN NAME>,
+    <COLUMN NAME>)
+VALUES (
+    "",
+    "",
+    ""
+);
+
+
 -- Prints a header for the movies output
 .print "Movies"
-.print "======"
+.print ""
 .print ""
 
 -- The SQL statement for the movies output
