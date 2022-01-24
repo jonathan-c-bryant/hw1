@@ -1,12 +1,4 @@
--- In this assignment, you'll be building the domain model, database 
--- structure, and data for "KMDB" (the Kellogg Movie Database).
--- The end product will be a report that prints the movies and the 
--- top-billed cast for each movie in the database.
 
--- Requirements/assumptions
---
--- - There will only be three movies in the database – the three films
---   that make up Christopher Nolan's Batman trilogy
 -- - Movie data includes the movie title, year released, MPAA rating,
 --   and director
 -- - A movie has a single director
@@ -17,19 +9,12 @@
 -- 
 -- There are three deliverables for this assignment, all delivered via
 -- this file and submitted via GitHub and Canvas:
--- - A domain model, implemented via CREATE TABLE statements for each
---   model/table. Also, include DROP TABLE IF EXISTS statements for each
---   table, so that each run of this script starts with a blank database.
---   (10 points)
 -- - Insertion of "Batman" sample data into tables (5 points)
 -- - Selection of data, so that something similar to the following sample
 --   "report" can be achieved (5 points)
 
 -- Submission
--- 
--- - "Use this template" to create a brand-new "hw1" repository in your
---   personal GitHub account, e.g. https://github.com/<USERNAME>/hw1
--- - Do the assignment, committing and syncing often
+
 -- - When done, commit and sync a final time, before submitting the GitHub
 --   URL for the finished "hw1" repository as the "Website URL" for the 
 --   Homework 1 assignment in Canvas
@@ -69,29 +54,150 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
-DROP TABLE IF EXISTS ;
-DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS people;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS roles;
+
 
 -- Create new tables, according to your domain model
 -- TODO!
 
-CREATE TABLE xyz (
-    id INTEGER PRIMARY KEY ,
-
+CREATE TABLE people (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_name TEXT
 );
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    release_date TEXT,
+    rating TEXT,
+    director_id INTEGER,
+);
+
+CREATE TABLE roles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role_name TEXT,
+    person_id INTEGER,
+    movie_id INTEGER,
+);
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO <TABLE NAME> (
-    <COLUMN NAME>,
-    <COLUMN NAME>,
-    <COLUMN NAME>)
+INSERT INTO people (
+    person_name,
 VALUES (
-    "",
-    "",
-    ""
+    "Christian Bale",
+    "Michael Caine",
+    "Liam Neeson",
+    "Katie Holmes",
+    "Gary Oldman", 
+    "Christian Bale",
+    "Heath Ledger",
+    "Aaron Eckhart",
+    "Michael Caine",
+    "Maggie Gyllenhaal",
+    "Christian Bale",
+    "Gary Oldman",
+    "Tom Hardy",
+    "Joseph Gordon-Levitt",
+    "Anne Hathaway",
+);
+
+INSERT INTO movies (
+    title,
+VALUES (
+    "Batman Begins",
+    "The Dark Knight",
+    "The Dark Knight Rises",
+);
+
+
+INSERT INTO movies (
+    release_date,
+VALUES (
+    "2005",
+    "2008",
+    "2012",
+);
+
+INSERT INTO movies (
+    rating,
+VALUES (
+    "PG-13",
+    "PG-13",
+    "PG-13",
+);
+
+INSERT INTO movies (
+    director_id,
+VALUES (
+    "1",
+    "1",
+    "1",
+);
+
+INSERT INTO roles (
+    role_name,
+VALUES (
+    "Bruce Wayne",
+    "Alfred",
+    "Ra's Al Ghul",
+    "Rachel Dawes",
+    "Commissioner Gordon",
+    "Bruce Wayne",
+    "Joker",
+    "Harvey Dent",
+    "Alfred",
+    "Rachel Dawes",
+    "Bruce Wayne",
+    "Commissioner Gordon",
+    "Bane",
+    "John Blake",
+    "Selina Kyle",
+);
+
+INSERT INTO roles (
+    person_id,
+VALUES (
+    "1"
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+);
+
+INSERT INTO roles (
+    movie_id,
+VALUES (
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
 );
 
 
