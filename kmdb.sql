@@ -164,6 +164,128 @@ VALUES (
     5
 );
 
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    1,
+    6,
+    6
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    2,
+    2,
+    2
+);
+
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    2,
+    7,
+    7
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    2,
+    8,
+    8
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    2,
+    3,
+    3
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    2,
+    5,
+    9
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    3,
+    2,
+    2
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    3,
+    6,
+    6
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    3,
+    9,
+    10
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    3,
+    10,
+    11
+);
+
+INSERT INTO bridge (
+    movie_id,
+    role_id,
+    person_id
+)
+VALUES (
+    3,
+    11,
+    12
+);
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "========"
@@ -187,3 +309,16 @@ SELECT movies.title,
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title,
+    people.person_name,
+    roles.role_name
+    FROM bridge
+    INNER JOIN movies
+    ON movies.id = bridge.movie_id
+    INNER JOIN people
+    ON people.id = bridge.person_id
+    INNER JOIN roles
+    ON roles.id = bridge.role_id
+    WHERE roles.role_name != "Director"
+    ;
